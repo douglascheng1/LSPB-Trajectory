@@ -1,4 +1,4 @@
-function transformationProduct = wristToBase(dhParameters)
+function transformationProduct = WristToBase(dhParameters)
 %wristToBase computes the homogenous transformation that relates he wrist
 %frame to the base frane, given the DH parameters for an N DOF manipulator
 
