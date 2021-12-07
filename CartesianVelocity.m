@@ -15,7 +15,7 @@ function CV = CartesianVelocity(jointVelocities, DHConfig)
         alpha = DHConfig(i,3);
         d = DHConfig(i,2);
         theta = DHConfig(i,4);
-        dtheta = jointVelocities(i);
+        dtheta = jointVelocities(1,i);
         dd = jointVelocities(2,i);
         
         TM = TransformMatrix(a, alpha, d, theta); % Calculate Transformation matrix
