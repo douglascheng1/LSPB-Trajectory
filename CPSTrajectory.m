@@ -15,7 +15,7 @@ for i = 1:size(p) % iterate through # of joints
         j
         a_0 = p(i,j) %a0 coefficient
         a_1 = v(i,j); %a1 coefficient
-        a_2 = (3*(p(i,j+1) - p(i,j)) - (t(j+1)-t(j))*(2*v(i,j)+v(i,j+1)))/((t(j+1)-t(j))^2); %a1 coefficient
+        a_2 = (3*(p(i,j+1) - p(i,j)) - (t(j+1)-t(j))*(2*v(i,j)+v(i,j+1)))/((t(j+1)-t(j))^2); %a2 coefficient
         a_3 = ((2*(p(i,j) - p(i,j+1))) + (t(j+1)-t(j))*(v(i,j)+v(i,j+1)))/((t(j+1)-t(j))^3); %a3 coefficient
 
         ts = (t(j):sample:t(j+1))-t(j); % sample time within time peroid
