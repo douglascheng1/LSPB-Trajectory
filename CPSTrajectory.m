@@ -12,7 +12,6 @@ sample = 0.1 % sampe time period
 
 for i = 1:size(p) % iterate through # of joints
     for j=1:(length(t)-1) % iterate through time peroids
-        j
         a_0 = p(i,j) %a0 coefficient
         a_1 = v(i,j); %a1 coefficient
         a_2 = (3*(p(i,j+1) - p(i,j)) - (t(j+1)-t(j))*(2*v(i,j)+v(i,j+1)))/((t(j+1)-t(j))^2); %a2 coefficient
