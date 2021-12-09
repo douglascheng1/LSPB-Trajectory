@@ -51,7 +51,7 @@ for i = 1:size(p) % iterate through # of joints
             title(sprintf('Acceleration of Joint %d',i));
             grid on
             
-            % reset trajectory arrays fpr next joint
+            % reset trajectory arrays for next joint
             totalPosition = []; 
             totalVelocity = [];
             totalAcceleration = [];
