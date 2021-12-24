@@ -24,33 +24,33 @@ for i=1:3 % iterate through joints
         
         % parabolic segement 1
         ts1 = t(j) : tb/100 : t(j)+tb; % time segment 1 sampled
-        TotalTime = [TotalTime, ts1]; %cumalative time
+        TotalTime = [TotalTime, ts1]; %cumulative time
         position = p(i,j) + 0.5*ac*(ts1-t(j)).^2; %calculate position
         velocity = ac*(ts1-t(j)); %calculate velocity
         acceleration = ac*ones(1,101); %calculate acceleration
-        TotalPosition = [TotalPosition, position]; % cumalative position
-        TotalVelocity = [TotalVelocity, velocity]; % cumalative velocity
-        TotalAcceleration = [TotalAcceleration, acceleration]; % cumalative accerlation
+        TotalPosition = [TotalPosition, position]; % cumulative position
+        TotalVelocity = [TotalVelocity, velocity]; % cumulative velocity
+        TotalAcceleration = [TotalAcceleration, acceleration]; % cumulative accerlation
         
         % linear segment
         ts2 = t(j)+tb : ((ti-tb)-tb)/100 : (t(j+1)-tb); % time segment 2 sampled
-        TotalTime = [TotalTime, ts2]; %cumalative time
+        TotalTime = [TotalTime, ts2]; %cumulative time
         position = pb + ac*tb*1.5*((ts2-t(j))-tb); %calculate position
         velocity = ac*tb*ones(1,101); %calculate velocity
         acceleration = zeros(1,101);  %calculate acceleration
-        TotalPosition = [TotalPosition, position]; % cumalative position
-        TotalVelocity = [TotalVelocity, velocity]; % cumalative velocity
-        TotalAcceleration = [TotalAcceleration, acceleration]; % cumalative accerlation
+        TotalPosition = [TotalPosition, position]; % cumulative position
+        TotalVelocity = [TotalVelocity, velocity]; % cumulative velocity
+        TotalAcceleration = [TotalAcceleration, acceleration]; % cumulative accerlation
         
         %parabolic segement 2
         ts3 = (t(j+1)-tb) : tb/100 : t(j+1); % time segment 3 sampled
-        TotalTime = [TotalTime, ts3]; %cumalative time
+        TotalTime = [TotalTime, ts3]; %cumulative time
         position = p(i,j+1) - 0.5*ac*(ts3-t(j+1)).^2; %calculate position
         velocity = -ac*(ts3-t(j+1)); %calculate velocity
         acceleration = -ac*ones(1,101); %calculate acceleration
-        TotalPosition = [TotalPosition, position]; % cumalative position
-        TotalVelocity = [TotalVelocity, velocity]; % cumalative velocity
-        TotalAcceleration = [TotalAcceleration, acceleration]; % cumalative accerlation
+        TotalPosition = [TotalPosition, position]; % cumulative position
+        TotalVelocity = [TotalVelocity, velocity]; % cumulative velocity
+        TotalAcceleration = [TotalAcceleration, acceleration]; % cumulative accerlation
     end
     
     % Position, Velocity, Acceleration Plots
